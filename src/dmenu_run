@@ -1,2 +1,11 @@
-#!/bin/sh
-dmenu_path | dmenu "$@" | ${SHELL:-"/bin/sh"} &
+#!/bin/bash
+
+declare -r termcmd="urxvtc -e"
+declare -r cmd="$(dmenu_path | dmenu -i $@)"
+
+case $cmd in
+    *\!) ${termcmd} "$(printf "%s" "${cmd}" | cut -d'!' -f1)";;
+    *  ) ${cmd};;
+esac
+exit
+
