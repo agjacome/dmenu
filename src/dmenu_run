@@ -3,7 +3,7 @@
 declare -r cmd="$(dmenu_path | dmenu -i $@)"
 
 case $cmd in
-    !c ) clipmenu;;
+    !c ) clipmenu -p "$(echo -en "\uF64D ")";;
     !m ) dmenu_mpc;;
     *\!) urxvtc -e "$(printf "%s" "${cmd}" | cut -d'!' -f1)";;
     *  ) ${cmd};;
