@@ -3,10 +3,10 @@
 declare -r cmd="$(dmenu_path | dmenu -i $@)"
 
 case $cmd in
-    !c ) clipmenu -p "$(echo -en "\uF64D ")";;
-    !m ) dmenu_mpc;;
-    *\!) urxvtc -e "$(printf "%s" "${cmd}" | cut -d'!' -f1)";;
-    *  ) ${cmd};;
+    clip\!) clipmenu -p "$(echo -en "\uF64E ")";;
+    play\!) dmenu_mpc;;
+    *\!   ) urxvtc -e "$(printf "%s" "${cmd}" | cut -d'!' -f1)";;
+    *     ) ${cmd};;
 esac
 exit
 
