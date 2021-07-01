@@ -2,11 +2,11 @@ static int topbar = 1;
 static int fuzzy  = 1;
 
 static unsigned int lines      = 0;
-static unsigned int lineheight = 21;
+static unsigned int lineheight = 0;
 
 static const char *prompt = "\uF002 ";
 
-static const char *fonts[] = { "DroidSansMono Nerd Font:size=10:antialias=true:autohint=true" };
+static const char *fonts[] = { "DroidSansMono Nerd Font:size=11:antialias=true:autohint=true" };
 
 static const char *colors[SchemeLast][2] = {
     /*                        fg         bg        */
