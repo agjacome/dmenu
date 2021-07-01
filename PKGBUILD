@@ -1,18 +1,18 @@
 # Maintainer: Alberto G. Jácome (agjacome) <contact@agjacome.dev>
-pkgname=dmenu-agjacome
-pkgver=r586.8baac5e
+pkgname=dwm-agjacome
+pkgver=r1711.da2b04e
 pkgrel=1
-pkgdesc="Patched and customized build of dmenu to suit my own needs"
+pkgdesc="Heavily-patched customized build of dwm to suit my own needs"
 arch=(x86_64 i686)
-url="https://github.com/agjacome/dmenu"
+url="https://github.com/agjacome/dwm"
 license=('MIT')
 groups=()
-depends=(libx11 libxinerama libxft freetype2)
+depends=(libx11 libxinerama libxft freetype2 dmenu)
 makedepends=()
 checkdepends=()
 optdepends=()
-provides=(dmenu)
-conflicts=(dmenu)
+provides=(dwm)
+conflicts=(dwm)
 replaces=()
 backup=()
 options=()
@@ -36,4 +36,5 @@ package() {
 
    make DESTDIR="${pkgdir}/" install
    install -Dm644 doc/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+   install -Dm644 src/dwm.desktop "${pkgdir}/usr/share/xsessions/dwm.desktop"
 }
