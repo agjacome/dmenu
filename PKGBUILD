@@ -1,6 +1,6 @@
-# Maintainer: Alberto G. Jácome (agjacome) <agjacome@gmail.com>
+# Maintainer: Alberto G. Jácome (agjacome) <contact@agjacome.dev>
 pkgname=dmenu-agjacome
-pkgver=r578.404ebc6
+pkgver=r586.8baac5e
 pkgrel=1
 pkgdesc="Patched and customized build of dmenu to suit my own needs"
 arch=(x86_64 i686)
