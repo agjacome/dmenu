@@ -3,10 +3,12 @@
 declare -r cmd="$(dmenu_path | dmenu -i $@)"
 
 case $cmd in
-    clip\!) clipmenu -p "$(echo -en "\uF64E ")";;
-    play\!) dmenu_mpc;;
-    *\!   ) alacritty -e "$(printf "%s" "${cmd}" | cut -d'!' -f1)";;
-    *     ) ${cmd};;
+    clip\!  ) clipmenu -p "$(echo -en "\uF64E ")";;
+    play\!  ) dmenu_mpc;;
+    dock\!  ) $HOME/bin/set-docked true;;
+    undock\!) $HOME/bin/set-docked false;;
+    *\!     ) alacritty -e "$(printf "%s" "${cmd}" | cut -d'!' -f1)";;
+    *       ) ${cmd};;
 esac
 exit
 
