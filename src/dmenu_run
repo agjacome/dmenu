@@ -3,13 +3,16 @@
 declare -r cmd="$(dmenu_path | dmenu -i $@)"
 
 case $cmd in
-    clip\!  ) clipmenu -p "$(echo -en "\uF64E ")";;
-    pass\!  ) clipctl disable && passmenu; clipctl enable;;
-    play\!  ) dmenu_mpc;;
-    dock\!  ) $HOME/.local/bin/_xutils/set-docked true;;
-    undock\!) $HOME/.local/bin/_xutils/set-docked false;;
-    *\!     ) alacritty -e "$(printf "%s" "${cmd}" | cut -d'!' -f1)";;
-    *       ) ${cmd};;
+    \:clip  ) clipmenu -p "$(echo -en "\uEAC0 ")";;
+    \:dock  ) $HOME/.local/bin/_xutils/set-docked true;;
+    \:pass  ) clipctl disable && passmenu -p "$(echo -en "\uEB11 ")"; clipctl enable;;
+    \:play  ) dmenu_mpc;;
+    \:undock) $HOME/.local/bin/_xutils/set-docked false;;
+
+    \:*) alacritty -e "$(printf "%s" "${cmd}" | cut -d':' -f2)";;
+    *\:) alacritty -e "$(printf "%s" "${cmd}" | cut -d':' -f1)";;
+
+    *) ${cmd};;
 esac
 exit
 
