@@ -4,7 +4,7 @@ declare -r cmd="$(dmenu_path | dmenu -i $@)"
 
 case $cmd in
     clip\!  ) clipmenu -p "$(echo -en "\uF64E ")";;
-    pass\!  ) passmenu;;
+    pass\!  ) clipctl disable && passmenu; clipctl enable;;
     play\!  ) dmenu_mpc;;
     dock\!  ) $HOME/.local/bin/_xutils/set-docked true;;
     undock\!) $HOME/.local/bin/_xutils/set-docked false;;
