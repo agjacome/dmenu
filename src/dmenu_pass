@@ -1,0 +1,17 @@
+#!/bin/bash
+
+function main() {
+    clipctl disable
+
+    passmenu \
+        -p "$(echo -en "\uEB11 ")" \
+        -fn "DroidSansMono Nerd Font:size=11:antialias=true:autohint=true" \
+        -nb "#1d1f21" \
+        -nf "#c5c8c6" \
+        -sb "#f0c674" \
+        -sf "#1d1f21"
+
+    clipctl enable
+}
+
+main $@;

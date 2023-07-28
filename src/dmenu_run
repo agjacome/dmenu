@@ -5,7 +5,7 @@ declare -r cmd="$(dmenu_path | dmenu -i $@)"
 case $cmd in
     \:clip  ) clipmenu -p "$(echo -en "\uEAC0 ")";;
     \:dock  ) $HOME/.local/bin/_xutils/set-docked true;;
-    \:pass  ) clipctl disable && passmenu -p "$(echo -en "\uEB11 ")"; clipctl enable;;
+    \:pass  ) dmenu_pass;;
     \:play  ) dmenu_mpc;;
     \:undock) $HOME/.local/bin/_xutils/set-docked false;;
 
