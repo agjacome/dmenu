@@ -6,7 +6,7 @@ static unsigned int lineheight = 0;
 
 static const char *prompt = "\uF002 ";
 
-static const char *fonts[] = { "DroidSansMono Nerd Font:size=11:antialias=true:autohint=true" };
+static const char *fonts[] = { "DroidSansM Nerd Font:size=11:antialias=true:autohint=true" };
 
 static const char *colors[SchemeLast][2] = {
     /*                        fg         bg        */
