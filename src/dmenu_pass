@@ -1,12 +1,14 @@
 #!/bin/bash
 
+declare -r icon=$(echo -ne "\uF084 ")
+
 function main() {
     clipctl disable
 
     passmenu \
         -i \
         -l 10 \
-        -p "$(echo -en "\uEB11 ")" \
+        -p "$icon" \
         -fn "DroidSansMono Nerd Font:size=11:antialias=true:autohint=true" \
         -nb "#1d1f21" \
         -nf "#c5c8c6" \
